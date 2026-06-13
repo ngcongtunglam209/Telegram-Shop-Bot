@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext"],
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "build",
+    "rootDir": ".",
+    "types": ["bun-types"]
+  },
+  "include": ["src/**/*.ts"]
+}

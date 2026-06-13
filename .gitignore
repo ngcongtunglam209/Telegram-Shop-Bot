@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment — never commit secrets
+.env
+
+# SQLite database files
+*.db
+*.db-wal
+*.db-shm
+
+# Build output
+build/
+
+# Bun
+.bun/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
