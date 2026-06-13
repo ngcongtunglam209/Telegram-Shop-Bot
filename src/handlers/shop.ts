@@ -9,7 +9,7 @@ import { categoryKeyboard, productDetailKeyboard, productListKeyboard } from '..
 export async function handleShop(ctx: Context | CallbackQueryContext<Context>): Promise<void> {
   const locale = getUserLocale(ctx.from!.id);
   const categories = getCategories();
-  const edit = 'callbackQuery' in ctx;
+  const edit = !!ctx.callbackQuery;
 
   if (categories.length === 0) {
     const text = t(locale, 'shop_empty');

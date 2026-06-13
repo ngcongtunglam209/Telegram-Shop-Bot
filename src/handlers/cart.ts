@@ -9,7 +9,7 @@ export async function handleCart(ctx: Context | CallbackQueryContext<Context>): 
   const locale = getUserLocale(ctx.from!.id);
   const userId = ctx.from!.id;
   const items = getCart(userId);
-  const edit = 'callbackQuery' in ctx;
+  const edit = !!ctx.callbackQuery;
 
   if (items.length === 0) {
     const text = t(locale, 'cart_empty');

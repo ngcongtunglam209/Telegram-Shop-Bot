@@ -7,7 +7,7 @@ import { formatPriceUsdt, formatPriceVnd } from '../utils/format.js';
 export async function handleMyOrders(ctx: Context | CallbackQueryContext<Context>): Promise<void> {
   const locale = getUserLocale(ctx.from!.id);
   const orders = getUserOrders(ctx.from!.id);
-  const edit = 'callbackQuery' in ctx;
+  const edit = !!ctx.callbackQuery;
 
   if (orders.length === 0) {
     const text = t(locale, 'orders_empty');

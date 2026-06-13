@@ -29,7 +29,7 @@ const adminState = new Map<number, { step: string; data: Record<string, unknown>
 
 export async function handleAdminMain(ctx: Context | CallbackQueryContext<Context>): Promise<void> {
   const text = '🔧 *Admin Panel*\n\nChoose an action:';
-  if ('callbackQuery' in ctx) {
+  if (ctx.callbackQuery) {
     await ctx.answerCallbackQuery();
     await ctx.editMessageText(text, { parse_mode: 'Markdown', reply_markup: adminMainKeyboard() });
   } else {
